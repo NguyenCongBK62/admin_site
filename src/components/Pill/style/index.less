@@ -1,0 +1,23 @@
+.pill {
+  display: block;
+  width: 94px;
+  height: 19px;
+  border-radius: 4px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #ffffff;
+  overflow: hidden;
+  margin-left: 16px;
+  &:first-child {
+    margin-left: 0;
+  }
+  svg {
+    position: absolute;
+  }
+  span {
+    z-index: 20;
+  }
+}

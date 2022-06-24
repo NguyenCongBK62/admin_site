@@ -1,0 +1,487 @@
+@import "../../../style/variables.less";
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  .top-banner {
+    background: @success-color; // success state color
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .banner-status {
+      // align-self: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        font-weight: 700;
+        text-align: center;
+        color: @white;
+      }
+      .case-number {
+        font-family: @font-english;
+        text-align: center;
+        font-size: 30px;
+        padding: 0 10px;
+      }
+    }
+    .person-count {
+      position: absolute;
+      right: 40px;
+      font-size: 12px;
+      color: @white;
+    }
+  }
+  .dashboard-title-container {
+    margin: 0 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+
+    span {
+      font-size: 28px;
+      font-weight: 700;
+      color: @primary-color;
+      padding-left: 10px;
+    }
+  }
+
+  .dashboard-action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 40px;
+    color: @primary-color;
+    font-size: 14px;
+
+    .today-button {
+      background: @white;
+      border: 1px solid @primary-color;
+      width: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 24px;
+      cursor: pointer;
+    }
+    .condensed-buttons {
+      background: @white;
+      border: 1px solid @primary-color;
+      font-size: 14px;
+      line-height: 24px;
+      height: 30px;
+      width: 90px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 30px;
+        border-right: 1px solid @primary-color;
+        cursor: pointer;
+        &:last-child {
+          border-right: none;
+        }
+      }
+      .selected {
+        background: @primary-color;
+        color: @white;
+      }
+    }
+  }
+}
+
+.pill-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 25px 0;
+  margin-bottom: 110px;
+  padding-left: 40px;
+}
+.gantt-datepicker {
+  background: transparent !important;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  input {
+    color: white !important;
+    cursor: pointer;
+    text-align: center;
+  }
+}
+
+.gantt-datepicker-dropdown {
+  font-size: 18px;
+}
+.gantt-options-container-open {
+  visibility: visible;
+  .gantt-options-item {
+    visibility: visible !important;
+    transform: translateX(0px) !important;
+    cursor: pointer;
+  }
+}
+.gantt-options-container {
+  visibility: hidden;
+  position: absolute;
+  bottom: 270px;
+  right: 105px;
+  z-index: 999;
+
+  .gantt-options {
+    &-item {
+      display: flex;
+      align-items: center;
+      font-family: @font-japanese;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 19px;
+      margin-top: 20px;
+      visibility: hidden;
+      transform: translateX(25px);
+
+      &:nth-child(1) {
+        -webkit-transition: all 1.5s ease;
+        transition: all 1s ease;
+      }
+
+      &:nth-child(2) {
+        -webkit-transition: all 1s ease;
+        transition: all 0.5s ease;
+      }
+
+      &:nth-child(3) {
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.2s ease;
+      }
+    }
+    &-button {
+      background: #fff;
+      border: none;
+      outline: none;
+      margin-left: 12px;
+    }
+    &-text {
+      width: 160px;
+      height: 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid #d8d8d8;
+      border-radius: 5px;
+    }
+  }
+}
+
+.rotate-button {
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+.round-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.gantt-create-button {
+  position: absolute;
+  bottom: 220px;
+  right: 105px;
+  z-index: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: @primary-color;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.gantt-header {
+  margin: 0 40px;
+  width: calc(100% - 80px);
+  height: 46px;
+  background: @primary-color;
+  border-radius: 10px 10px 0px 0px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 40px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0 15px;
+  .header-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 20px;
+  }
+}
+
+.gantt-container {
+  width: 100%;
+  margin: 20px 0;
+  font-family: Noto Sans CJK JP;
+
+  .gantt {
+    margin: 0px 40px;
+    box-shadow: 0px 10px 30px rgba(4, 7, 32, 0.2);
+    position: relative;
+    background: @white;
+    min-height: 155px;
+
+    .gantt-fixed-table-content {
+      width: 175px;
+      border-left: 1px solid @primary-color;
+      border-bottom: 1px solid #b2b5c8;
+      height: 60px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 12px;
+      font-size: 14px;
+      font-weight: 700;
+
+      border-right: 1px solid @primary-color;
+      img {
+        margin-right: 10px;
+      }
+      .table-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .people-count {
+        font-size: 12px;
+        color: #888888;
+        font-weight: 400;
+      }
+    }
+    .week-gantt {
+      overflow: auto;
+      .gantt-table-container {
+        overflow: initial;
+      }
+      .gantt-chart-static-week {
+        display: flex;
+      }
+      .gantt-chart-static-day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid @primary-color;
+        border-bottom: 1px solid @primary-color;
+        min-width: 80px;
+        max-width: 80px;
+      }
+      .empty-content-week {
+        display: block;
+        height: 35px;
+        width: 255px;
+        border-bottom: 1px solid @primary-color;
+      }
+      .gantt-table {
+        left: 255px !important;
+      }
+    }
+    .gantt-chart-static-columns {
+      position: absolute;
+      background: #fff;
+      z-index: 400;
+      display: flex;
+
+      .empty-content {
+        display: none;
+        height: 35px;
+        border-bottom: 1px solid @primary-color;
+
+        &:first-child {
+          display: block;
+        }
+      }
+    }
+
+    .gantt-table-container {
+      display: flex;
+      overflow: auto;
+      position: relative;
+      .current-time-passed-container {
+        position: absolute;
+        background: #f4f5f8;
+        z-index: 150;
+        top: 35px;
+      }
+      .gantt-overlay-container {
+        position: absolute;
+        width: 2400px;
+        top: 35px;
+      }
+      .gantt-table {
+        display: flex;
+        flex-direction: column;
+        width: 2575px;
+        position: relative;
+        left: 175px;
+        .gantt-row {
+          display: flex;
+          z-index: 150;
+
+          height: 60px;
+          .gantt-cell {
+            width: 50px;
+            padding: 5px;
+            border-left: 1px solid #b2b5c8;
+            border-bottom: 1px solid #b2b5c8;
+            cursor: pointer;
+            z-index: 250;
+          }
+          .first-cell {
+            // border-left: 1px solid @primary-color;
+          }
+          .odd-cell {
+            border-left: 1px dashed #b2b5c8;
+          }
+          .disabled {
+            cursor: auto;
+          }
+
+          &:last-child {
+            border-bottom: 1px solid @primary-color;
+            .gantt-cell {
+              border-bottom: none;
+            }
+          }
+        }
+        .gantt-heading-row {
+          height: 35px;
+          .first-heading {
+            // border-left: 1px solid @primary-color;
+            border-bottom: 1px solid @primary-color;
+          }
+          .odd-heading {
+            border-left: none;
+          }
+          .gantt-heading {
+            border-bottom: 1px solid @primary-color;
+          }
+        }
+
+        .last-row {
+          .gantt-cell {
+            border-bottom: none;
+          }
+          .gantt-fixed-table-content {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+
+    &-click-options {
+      // display: none;
+      position: absolute;
+      z-index: 1100;
+
+      top: 200px;
+      left: 200px;
+      -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px 0px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px 0px;
+
+      &-container {
+        width: 230px;
+        height: 50px;
+        line-height: 52px;
+        background: @white;
+        color: @text-color;
+        font-size: 16px;
+
+        display: flex;
+        justify-content: space-around;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.responsiveDashboard() {
+  .person-count {
+    display: none;
+  }
+
+  .home-container {
+    .dashboard-title-container {
+      margin: 42px 15px 0px;
+    }
+    .dashboard-action-buttons {
+      margin: 0px 15px;
+    }
+    .gantt-header {
+      margin: 0px;
+      width: 100%;
+      border-radius: 0px;
+    }
+  }
+  .gantt-container {
+    .gantt {
+      margin: 0px;
+      .gantt-fixed-table-content {
+        width: 110px !important;
+      }
+      .gantt-table {
+        left: 110px !important;
+        width: 2510px !important;
+      }
+      .week-gantt {
+        .gantt-table {
+          left: 190px !important;
+        }
+        .empty-content-week {
+          width: 190px !important;
+        }
+        .gantt-chart-static-day {
+          min-width: 80px;
+          max-width: 80px;
+        }
+      }
+    }
+  }
+  .gantt-create-button {
+    bottom: 50% !important;
+    right: 32px !important;
+  }
+  .gantt-options-container {
+    bottom: calc(50% + 50px);
+    right: 32px;
+  }
+  .pill-container {
+    flex-wrap: wrap;
+    padding-left: 15px;
+    .pill {
+      margin-left: 0px;
+      margin-right: 15px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .responsiveDashboard();
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 1023px) and (orientation: portrait) {
+  .responsiveDashboard();
+}

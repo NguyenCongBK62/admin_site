@@ -1,0 +1,92 @@
+@import "../../../style/variables.less";
+
+.calendar {
+  display: flex;
+  width: 100%;
+  height: 65vh;
+  flex-direction: column;
+  color: @text-color;
+  &-header {
+    display: flex;
+    width: 100%;
+    height: 35px;
+    border: 1px solid @primary-color;
+    div {
+      display: flex;
+      flex-basis: 100%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      border-right: 1px solid @primary-color;
+      font-weight: 600;
+      &:nth-child(6) {
+        color: @primary-color;
+      }
+      &:nth-child(7) {
+        color: @success-color;
+      }
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+  &-body {
+    display: grid;
+    height: 100%;
+    grid-auto-rows: 1fr;
+    border: 1px solid @primary-color;
+    border-top: none;
+    &-row {
+      display: flex;
+      flex-grow: 1;
+      border-bottom: 1px solid @primary-color;
+      &:last-child {
+        border: none;
+      }
+    }
+    &-cell {
+      flex-basis: 100%;
+      text-align: center;
+      border-right: 1px solid @primary-color;
+      padding-top: 6px;
+      &-reservation-header {
+        cursor: pointer;
+        color: #cccccc;
+      }
+      &-popover-list {
+        list-style: none;
+        &-item {
+          width: 320px;
+          height: 30px;
+          cursor: pointer;
+          span {
+            float: right;
+          }
+          &:hover {
+            color: @primary-color;
+          }
+        }
+      }
+      &:last-child {
+        border: none;
+      }
+      &-blue {
+        color: @primary-color;
+      }
+      &-red {
+        color: @success-color;
+      }
+      &-day {
+        font-family: @font-english;
+        font-size: 14px;
+        font-weight: bold;
+        &-selected {
+          background: @primary-color;
+          border-radius: 50%;
+          color: @white;
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
+}

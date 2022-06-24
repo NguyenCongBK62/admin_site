@@ -1,0 +1,152 @@
+@import "../../../style/variables.less";
+.customer-menu-dropdown {
+  p {
+    padding: 15px 0;
+    cursor: pointer;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+}
+
+.ReactModal__Overlay--after-open {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  z-index: 1000 !important;
+  height: 100% !important;
+  background-color: rgba(0, 0, 0, 0.25098039215686274) !important;
+}
+.reservation-modal {
+  .customer-menu-icon {
+    cursor: pointer;
+    padding-right: 15px;
+    font-size: 16px;
+  }
+
+  .modal-label {
+    font-weight: bold;
+    line-height: 32px;
+    font-size: 16px;
+  }
+  .modal-data {
+    line-height: 32px;
+    font-size: 16px;
+  }
+
+  &-button-group {
+    .ant-radio-group {
+      width: 100%;
+      display: flex;
+    }
+
+    .ant-radio-group-solid {
+      .ant-radio-button-wrapper:not(:first-child)::before {
+        background-color: #d9d9d9 !important;
+      }
+      .ant-radio-button-wrapper {
+        flex-basis: 100%;
+        text-align: center;
+        font-family: @font-japanese;
+        font-size: 16px;
+        font-weight: bold;
+        border-right: 1px solid #d9d9d9;
+      }
+
+      .ant-radio-button-wrapper-checked {
+        background-color: @primary-color;
+        color: #fff;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+      background: #fff;
+    }
+  }
+
+  &-tags-group {
+    margin: 10px 0;
+  }
+
+  &-details {
+    margin-top: 20px;
+    .ant-row {
+      margin-top: 5px;
+    }
+    .ant-col {
+      display: flex;
+    }
+    .label-container {
+      width: 100px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .icon-container {
+      width: 30px;
+      display: flex;
+      align-items: center;
+    }
+    .data-container {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+  .ant-modal-footer {
+    .ant-btn:nth-child(1) {
+      color: @success-color;
+    }
+    .ant-btn:nth-child(2) {
+      margin-right: 20px;
+    }
+  }
+  .reservation-table {
+    .ant-table-cell {
+      align-items: center;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
+  }
+}
+
+.ant-modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.responsiveModal() {
+  .reservation-modal-button-group
+    .ant-radio-group-solid
+    .ant-radio-button-wrapper {
+    font-size: 12px;
+  }
+}
+
+.advance-search-modal {
+  width: 80% !important;
+  max-width: 800px;
+  & > .ant-modal-content > .ant-modal-footer {
+    justify-content: center !important;
+  }
+  & > .ant-modal-content > .ant-modal-body {
+    height: 60vh;
+    max-height: 650px;
+    overflow-y: scroll;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .responsiveModal();
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 1023px) and (orientation: portrait) {
+  .responsiveModal();
+}

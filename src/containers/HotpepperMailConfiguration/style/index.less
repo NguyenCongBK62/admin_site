@@ -1,0 +1,225 @@
+@import "../../../style/variables.less";
+
+.mail-container {
+  font-family: Noto Sans CJK JP;
+  margin: 0px 40px;
+  padding: 49.17px 0px 120px 0px;
+}
+
+.ant-steps-horizontal:not(.ant-steps-label-vertical)
+  .ant-steps-item-description {
+  max-width: 140px;
+  white-space: normal;
+  margin-top: 38px !important;
+  margin-left: -36px !important;
+}
+
+.ant-steps-item-title {
+  padding-right: 0px !important;
+}
+
+.ant-steps-item-title::after {
+  background-color: #d8d8d8 !important;
+  top: 18px !important;
+}
+
+.ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item {
+  padding-left: 0px !important;
+}
+
+.ant-steps-item-icon {
+  width: 36px !important;
+  height: 36px !important;
+  margin: 0px !important;
+}
+
+.ant-steps-icon {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #d8d8d8;
+}
+
+.ant-steps-item-description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px !important;
+  line-height: 150% !important;
+  text-align: center !important;
+  color: #d8d8d8 !important;
+}
+
+.ant-steps-item-wait {
+  .ant-steps-item-icon {
+    border: 1px solid #d8d8d8 !important;
+  }
+}
+
+.ant-steps-item-process {
+  .ant-steps-item-icon {
+    border: 1px solid @primary-color !important;
+  }
+  .ant-steps-icon {
+    color: @primary-color !important;
+  }
+  .ant-steps-item-description {
+    color: @primary-color !important;
+  }
+}
+
+.ant-steps-item-finish {
+  .ant-steps-item-icon {
+    background-color: @primary-color !important;
+  }
+  .ant-steps-icon {
+    color: white !important;
+  }
+  .ant-steps-item-description {
+    color: @primary-color !important;
+  }
+  .ant-steps-item-title::after {
+    background-color: @primary-color !important;
+  }
+}
+
+.mail-configuration-span {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #111111;
+  margin-bottom: 0px !important;
+}
+
+// ToolTip style
+
+.ant-tooltip-inner {
+  background: #eeeff5;
+  border: 1px solid @primary-color;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 15px;
+  color: @primary-color;
+}
+
+.ant-tooltip-arrow-content {
+  top: -12px;
+  width: 16px !important;
+  height: 20px !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid @primary-color !important;
+}
+
+.ant-tooltip-placement-top {
+  z-index: 99999;
+}
+
+.channel-reg-flex-button {
+  display: flex;
+  margin-top: 15px;
+  justify-content: flex-end;
+}
+
+.channel-reg-col {
+  font-style: normal;
+  font-size: 14px;
+  color: #111111;
+  border: 1px solid #d8d8d8;
+  &-1 {
+    font-weight: bold;
+    line-height: 24px;
+    text-align: center;
+    padding: 9px 24px 12px 24px;
+  }
+  &-2 {
+    font-weight: normal;
+    line-height: 21px;
+    text-align: start;
+    padding: 12px 0px 12px 24px;
+  }
+}
+
+.ant-input-wrapper {
+  input {
+    height: 40px;
+    color: @link-color !important;
+  }
+}
+
+.responsiveLineIphone() {
+  .ant-steps-item-description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px !important;
+    line-height: 150% !important;
+    color: #d8d8d8 !important;
+    max-width: 90px !important;
+  }
+  .mail-container {
+    margin: 0px 20px !important;
+    .ant-row-middle {
+      margin-bottom: 24px !important;
+      //   justify-content: center;
+    }
+    .input-element {
+      text-align: left !important;
+    }
+    .line-button {
+      width: 100% !important;
+      margin-left: 0px !important;
+    }
+    .form-header {
+      margin-left: 0px !important;
+    }
+    .question-span {
+      float: right;
+    }
+    .channel-reg-flex-button {
+      flex-wrap: wrap !important;
+      margin-top: 0px !important;
+      span {
+        margin-bottom: 14px !important;
+      }
+    }
+  }
+  .ant-tooltip-inner {
+    font-size: 16px !important;
+    line-height: 24px !important;
+    width: 313px !important;
+  }
+  .ant-tooltip {
+    max-width: 313px !important;
+  }
+  .line-configuration-span {
+    text-align: start;
+  }
+}
+/* ----------- iPhone X ----------- */
+
+// @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+//   .responsiveLineIphone();
+// }
+
+// @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+//   .responsiveLineIphone();
+// }
+
+/* ----------- iPads----------- */
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .responsiveLineIphone();
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 375px) and (max-device-width: 1023px) and (orientation: portrait) {
+  .responsiveLineIphone();
+}
